@@ -10,6 +10,6 @@ public class Restaurante {
     private String nome;
     private String localizacao;
     private String tipoCozinha;
-    private LocalDate horariosFuncionamento;
+    private String horariosFuncionamento;
     private int capacidade;
 }
