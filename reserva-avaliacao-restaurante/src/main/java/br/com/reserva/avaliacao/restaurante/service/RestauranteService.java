@@ -1,6 +1,8 @@
 package br.com.reserva.avaliacao.restaurante.service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import br.com.reserva.avaliacao.restaurante.domain.Restaurante;
 import br.com.reserva.avaliacao.restaurante.repository.RestauranteRepository;
 
@@ -8,11 +10,11 @@ import br.com.reserva.avaliacao.restaurante.repository.RestauranteRepository;
 public class RestauranteService {
 
     @Autowired
-    private RestauranteRepository restauranteRepositori;
+    private RestauranteRepository restauranteRepository;
 
-    public Restaurante cadastrarRestaurante(Restaurante restaurante) {
-        restauranteRepositori.save(restaurante);
-        return restaurante;
+    public ResponseEntity<Restaurante> criarRestaurante(Restaurante restaurante) {
+        restauranteRepository.save(restaurante);
+        return ResponseEntity.status(201).build();
     }
 
 

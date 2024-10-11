@@ -1,20 +1,27 @@
 package br.com.reserva.avaliacao.restaurante.domain;
+import java.time.LocalDateTime;
 import org.springframework.data.mongodb.core.index.Indexed;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-public class Restaurante {
+public class Reserva {
+
 
     @Id
     @Indexed(unique=true)
+    private String idReserva;
+
+
+    private String idUsuario;
     private String idRestaurante;
-    
-    private String nomeRestaurante;
-    private String localizacaoRestaurante;
-    private String tipoCozinhaRestaurante;
-    private String horariosFuncionamentoRestaurante;
-    private int capacidadeRestaurante;
+    private LocalDateTime dataHoraReserva;
+    private Integer qtdPessoasNaReserva;
+
+
+
+
 }
